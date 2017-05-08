@@ -1,8 +1,8 @@
-#!/bin/python
+#!/usr/bin/env python
 import json, requests, sys
 
 if not len(sys.argv) == 2:
-    print("Usage: img <filename>")
+    print("Usage: {} <filename>".format(sys.argv[0]))
     sys.exit()
 
 filename = str(sys.argv[1])
