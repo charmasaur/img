@@ -12,9 +12,6 @@ except IOError:
     print("Failed to open " + filename)
     sys.exit()
 
-result = requests.post("https://api.imgur.com/3/image", headers={"Authorization":"Client-ID c0e6d83a72d02a9"}, files={"image":f}).json()
+response = requests.post("https://romper-image.appspot.com/upload", files={"image":f})
 
-if result["success"]:
-    print(result["data"]["link"])
-else:
-    print("Something went wrong, status code " + str(result["status"]))
+print(response.text)
