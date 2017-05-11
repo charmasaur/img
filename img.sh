@@ -5,5 +5,6 @@ if [ $# -ne 1 ] ; then
   exit
 fi
 
-curl -F "image=@$1" http://romper-image.appspot.com/upload
-echo
+url=$(curl -s -F "image=@$1" http://romper-image.appspot.com/upload)
+echo $url
+hash xclip 2>/dev/null && { printf $url | xclip; echo "Copied to clipboard"; }
