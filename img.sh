@@ -7,4 +7,7 @@ fi
 
 url=$(curl -s -F "image=@$1" http://romper-image.appspot.com/upload) || { echo "Try again"; exit; }
 echo $url
-hash xclip 2>/dev/null && { printf $url | xclip; echo "Copied to clipboard"; }
+copy_commands=(xclip pbcopy)
+for i in "${copy_commands[@]}" ; do
+  hash $i 2>/dev/null && { printf $url | $i; echo "Copied to clipboard"; break; }
+done
