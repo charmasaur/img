@@ -2,7 +2,6 @@
     "name": "Romper screenshot",
     "version": "1.0",
     "description": "Take screenshots of your tabs.",
-    "content_security_policy": "script-src 'self' https://unpkg.com/jcrop; object-src 'self'",
     "background": {
         "scripts": ["background.js"],
         "persistent": false
