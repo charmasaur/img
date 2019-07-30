@@ -1,1 +1,0 @@
-Jcrop library, manually imported from https://github.com/tapmodo/Jcrop/tree/master/dist.
