@@ -28,7 +28,7 @@ function setImageUrl(imageUrl) {
                 formData.append("image", croppedImageBlob);
 
                 // Send data. If all is successful, redirect to the uploaded image.
-                fetch("https://romper-image.appspot.com/upload", {
+                fetch("https://romper-image.herokuapp.com/upload", {
                     method: 'POST',
                     body: formData
                 })
