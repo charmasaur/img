@@ -1,10 +1,10 @@
-from flask import Flask, abort, request, render_template, url_for, make_response
+from flask import abort, request, render_template, url_for, make_response
+from flask_sqlalchemy import SQLAlchemy
 import base64
 import imghdr
 
-import app.storage
-
-app = Flask(__name__)
+from app.storage import get, put
+from app.app import app
 
 @app.route('/', methods=['GET'])
 def welcome():
@@ -18,7 +18,7 @@ def img(path):
     if len(components) >= 2:
         ext = components[-1]
 
-    item = storage.get(key)
+    item = get(key)
     if not item:
         return "not found", 404
     data, _ = item
@@ -35,7 +35,7 @@ def upload():
     ext = get_ext(data)
     if not ext:
         return "could not determine type", 400
-    key = storage.put(data)
+    key = put(data)
     return url_for("img", path=key + "." + ext, _external=True)
 
 def get_data(request):
