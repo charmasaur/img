@@ -18,10 +18,9 @@ def img(path):
     if len(components) >= 2:
         ext = components[-1]
 
-    item = get(key)
-    if not item:
+    data = get(key)
+    if not data:
         return "not found", 404
-    data, _ = item
 
     response = make_response(data)
     response.headers['Content-Type'] = 'image/' + ext
