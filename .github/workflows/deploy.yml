@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: Techmmunity/docker-heroku-deploy@v1.0.0
+      - uses: akhileshns/heroku-deploy@v3.8.9
         with:
-          email: "harry.slatyer@gmail.com"
-          api_key: ${{secrets.HEROKU_API_KEY}}
-          app_name: "romper-image"
-          dockerfile_path: "host"
+          heroku_email: "harry.slatyer@gmail.com"
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "romper-image"
+          appdir: "host"
