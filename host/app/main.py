@@ -2,7 +2,7 @@ from flask import Flask, abort, request, render_template, url_for, make_response
 import base64
 import imghdr
 
-import storage
+import app.storage
 
 app = Flask(__name__)
 
