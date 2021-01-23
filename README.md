@@ -1,3 +1,3 @@
 Non-lame image hosting.
 
-http://romper-image.appspot.com
+http://romper-image.herokuapp.com
