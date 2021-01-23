@@ -15,4 +15,4 @@ jobs:
           email: "harry.slatyer@gmail.com"
           api_key: ${{secrets.HEROKU_API_KEY}}
           app_name: "romper-image"
-          dockerfile_path: "host/"
+          dockerfile_path: "host"
